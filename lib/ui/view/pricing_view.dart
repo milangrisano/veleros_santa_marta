@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class PricingView extends StatelessWidget {
   const PricingView({super.key});
@@ -8,12 +8,12 @@ class PricingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.pinkAccent,
-      child: Center(
+      child: const Center(
         child: Text(
           'PricingView',
-          style: GoogleFonts.roboto(
-            fontSize: 40,
+          style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 40
           ),
         )
       ),
