@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_app/responsive/desktop_scaffold.dart';
-import 'package:responsive_app/responsive/mobile_scaffold.dart';
-import 'package:responsive_app/responsive/reponsive_layout.dart';
-import 'package:responsive_app/responsive/tablet_scaffold.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_app/provider/page_provider.dart';
+import 'package:responsive_app/router/router.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const AppState());
 }
 
-class MainApp extends StatelessWidget {
+class AppState extends StatelessWidget {
+  const AppState({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_)=> PageProvider())
+      ],
+      child: const MainApp(),
+    );
+  }
+}
+
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+
+  @override
+  void initState() {
+    super.initState();
+    Flurorouter.configureRoutes();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ResponsiveLayout(
-        mobileScaffold: MobileScaffold(),
-        tabletScaffold: TabletScaffold(),
-        desktopScaffold: DesktopScaffold(),
-      ),
+      title: 'Veleros Santa Marta',
+      onGenerateRoute: Flurorouter.router.generator,
+      initialRoute: '/home',
     );
   }
 }

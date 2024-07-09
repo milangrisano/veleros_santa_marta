@@ -2,23 +2,30 @@ import 'package:flutter/material.dart';
 
 class ExtendAppBarButton extends StatelessWidget {
   final String text;
-  final Function onPress;
+  final Function onPressed;
     
   const ExtendAppBarButton({
     super.key,
     required this.text,
-    required this.onPress,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: (){},
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.black,
-        // disabledForegroundColor: Colors.red.withOpacity(0.38),
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: TextButton(
+        onPressed: () => onPressed(),
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.black,
+          textStyle: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          )
+          // disabledForegroundColor: Colors.red.withOpacity(0.38),
+        ),
+        child: Text(text)
       ),
-      child: Text(text)
     );
   }
 }
