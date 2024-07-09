@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:universal_html/html.dart' as html;
 
 class PageProvider extends ChangeNotifier {
-  PageController scrollControler = new PageController();
+  PageController scrollControler = PageController();
 
-  List<String> _pages = ['home', 'about', 'pricing', 'contact', 'location'];
+  final List<String> _pages = ['home', 'about', 'pricing', 'contact', 'location'];
 
   int _currentIndex = 0;
 
   createScrollController( String routeName ){
-    this.scrollControler = new PageController( initialPage: getPageIndex(routeName));
+    scrollControler = PageController( initialPage: getPageIndex(routeName));
     html.document.title = _pages[ getPageIndex(routeName)];
-    this.scrollControler.addListener((){
-      final index = (this.scrollControler.page ?? 0).round();
+    scrollControler.addListener((){
+      final index = (scrollControler.page ?? 0).round();
       if( index != _currentIndex ){
         html.window.history.pushState(null, 'none', '#/${ _pages[index]}');
         _currentIndex = index;
@@ -23,7 +23,7 @@ class PageProvider extends ChangeNotifier {
   }
 
   int getPageIndex( String routeName ){
-    return (_pages.indexOf(routeName) == -1)
+    return (!_pages.contains(routeName))
             ? 0
             : _pages.indexOf(routeName);
   }

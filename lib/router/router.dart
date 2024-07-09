@@ -2,7 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:responsive_app/router/router_handlers.dart';
 
 class Flurorouter {
-  static final FluroRouter router = new FluroRouter();
+  static final FluroRouter router = FluroRouter();
 
   static void configureRoutes(){
     
