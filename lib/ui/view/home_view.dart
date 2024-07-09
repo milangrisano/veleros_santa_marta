@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -6,13 +7,20 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/background_home.jpg'),
+          fit: BoxFit.cover,
+        )
+      ),
+      // color: Colors.blueAccent,
       child: const Center(
         child: Text(
           'HomeView',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 40
+            fontSize: 40,
+            color: Colors.white,
           ),
         )
       ),

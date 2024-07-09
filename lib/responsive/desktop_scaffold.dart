@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
-import 'package:responsive_app/shared/extend_appbar_button.dart';
+import 'package:responsive_app/shared/extend_appbar_buttontext.dart';
 import 'package:responsive_app/ui/home_body.dart';
 
 class DesktopScaffold extends StatelessWidget {
@@ -16,7 +16,14 @@ class DesktopScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        title: const Text('Name Page'),
+        title: const Text(
+          'Veleros Santa Marta',
+          style: TextStyle(
+            color: Colors.white,
+            
+
+          ),
+        ),
         actions:  [
           ExtendAppBarButton(
             text: 'Home',
