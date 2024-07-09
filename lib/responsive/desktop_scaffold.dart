@@ -16,13 +16,19 @@ class DesktopScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
+        leading: const Padding(
+          padding: EdgeInsets.all(4.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            foregroundImage: AssetImage('assets/images/logo_small.png'),
+          ),
+        ),
         title: const Text(
           'Veleros Santa Marta',
           style: TextStyle(
             color: Colors.white,
-            
-
-          ),
+            // fontFamily: 'DancingScript'         
+          )
         ),
         actions:  [
           ExtendAppBarButton(

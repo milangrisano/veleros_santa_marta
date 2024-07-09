@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -21,6 +20,7 @@ class HomeView extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 40,
             color: Colors.white,
+            fontFamily: 'DancingScript'
           ),
         )
       ),
