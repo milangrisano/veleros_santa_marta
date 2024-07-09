@@ -27,7 +27,7 @@ class DesktopScaffold extends StatelessWidget {
           'Veleros Santa Marta',
           style: TextStyle(
             color: Colors.white,
-            // fontFamily: 'DancingScript'         
+            fontFamily: 'DancingScript'         
           )
         ),
         actions:  [
