@@ -18,5 +18,6 @@ final homeHandler = Handler(
         desktopScaffold: DesktopScaffold(),
       );
     }
+    return null;
   }
 );
